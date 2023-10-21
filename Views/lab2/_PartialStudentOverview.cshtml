@@ -1,0 +1,31 @@
+﻿@model lab_1.Models.Entities.ViewModels.StudentVM
+
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.DisplayFor(modelItem => Model.Фамилия)
+        @Html.DisplayFor(modelItem => Model.Имя)
+        @Html.DisplayFor(modelItem => Model.Отчество)
+        (@{Html.RenderAction("ShowGroups", new { studentID = Model.ID_студента });} ])
+
+    </div>
+    <div class="col-md-2">
+        @Html.DisplayFor(modelItem => Model.Дата_рождения)
+    </div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="col-md-2">
+            @Html.ActionLink("Детали", "StudentDetails", new { controller = "lab2", id = Model.ID_студента }, null)
+        </div>
+        if (User.IsInRole("Admin"))
+        {
+            <div class="col-md-2">
+                @Html.ActionLink("Изменить", "EditStudent", new { controller = "lab2", studentID = Model.ID_студента }, null)
+            </div>
+            <div class="col-md-2">
+                @Html.ActionLink("Удалить", "DeliteStudent", new { controller = "lab2", studentID = Model.ID_студента }, null)
+            </div>
+        }
+    }
+
+</div>

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<lab_1.Models.Entities.ViewModels.StudentVM>
+
+@{
+    ViewBag.Title = "ListOfStudents";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <p>
+        @Html.ActionLink("Добавить студента", "CreateStudent", "lab2", new {@class = "btn btn-default border-dark" })
+    </p>
+    <div class="row">
+        <div class="col-md-4">ФИО</div>
+        <div class="col-md-2">@Html.DisplayNameFor(model => model.Дата_рождения)</div>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="col-md-2">#</div>
+            if (User.IsInRole("Admin"))
+            {
+                <div class="col-md-2">#</div>
+                <div class="col-md-2">#</div>
+            }
+        }
+
+    </div>
+    
+    @foreach (var item in Model) {
+        { Html.RenderPartial("_PartialStudentOverview", item);}
+    }
+    
+    
+</body>

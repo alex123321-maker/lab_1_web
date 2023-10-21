@@ -1,0 +1,48 @@
+﻿@model lab_1.Models.Entities.ViewModels.StudentVM
+
+@{
+    ViewBag.Title = "DeliteStudent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DeliteStudent</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>StudentVM</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-2 fw-bold">@Html.DisplayNameFor(model => model.Фамилия)</div>
+        <div class="col-md-2 ">@Html.DisplayFor(model => model.Фамилия)</div>
+
+        <div class="col-md-2 fw-bold">@Html.DisplayNameFor(model => model.Имя)</div>
+        <div class="col-md-2">@Html.DisplayFor(model => model.Имя)</div>
+
+        <div class="col-md-2 fw-bold">@Html.DisplayNameFor(model => model.Отчество)</div>
+        <div class="col-md-2">@Html.DisplayFor(model => model.Отчество)</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 fw-bold">@Html.DisplayNameFor(model => model.Пол)</div>
+        <div class="col-md-2">@Html.DisplayFor(model => model.Пол)</div>
+
+        <div class="col-md-2 fw-bold">@Html.DisplayNameFor(model => model.Адрес_проживания)</div>
+        <div class="col-md-2">@Html.DisplayFor(model => model.Адрес_проживания)</div>
+
+        <div class="col-md-2 fw-bold">@Html.DisplayNameFor(model => model.Дата_рождения)</div>
+        <div class="col-md-2">@Html.DisplayFor(model => model.Дата_рождения)</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 fw-bold">@Html.DisplayNameFor(model => model.Уровень_владения_ИЯ)</div>
+        <div class="col-md-2">@Html.DisplayFor(model => model.Уровень_владения_ИЯ)</div>
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default border-dark mt-1" />
+            @Html.ActionLink("Вернуться к списку", "ListOfStudents", "lab2", new { @class = "btn btn-default border-dark mt-1" })
+
+        </div>
+    }
+</div>

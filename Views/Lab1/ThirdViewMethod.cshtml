@@ -1,0 +1,31 @@
+﻿@model List<string>
+
+<h2>Групировка овощей (по таблицам)</h2>
+
+@{
+    var currentVeg = Model.GroupBy(x => x.Substring(0, 1)).ToList();
+    for (int letterIndex = 0; letterIndex < currentVeg.Count(); letterIndex++)
+    {
+
+
+
+
+        <table class="table-bordered w-25">
+            <thead>
+                <tr>
+                    <th class="text-center">@currentVeg[letterIndex].Key</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (var objectIndex = 0; objectIndex < currentVeg[letterIndex].Count(); objectIndex++)
+                {
+                    <tr class="text-center">
+                        <td>@currentVeg[letterIndex].ElementAt(objectIndex)</td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+        <hr />
+    }
+}

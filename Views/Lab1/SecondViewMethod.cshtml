@@ -1,0 +1,22 @@
+﻿@model List<string>
+@{
+    ViewBag.Title = "SecondViewMethod";
+}
+
+<h2>Отсортированный список овощей (таблица) </h2>
+<table>
+    <thead>
+        <tr>
+            <th class="text-center">Наименование</th>
+        </tr>
+    </thead> 
+    <tbody>
+        @foreach (var el in Model)
+        {
+            <tr>
+                <td>@el</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

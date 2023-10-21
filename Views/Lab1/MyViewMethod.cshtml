@@ -1,0 +1,22 @@
+﻿@model List<string>
+@{
+    ViewBag.Title = "Мой способ вывода данных";
+}
+
+<h2>Мой способ вывода данных</h2>
+
+<table style="">
+    <tbody >
+        @foreach(var veg in Model){
+                <tr >
+                    @foreach(var el in veg)
+                {
+                    <td style="border: solid 1px; padding: 2px">
+                        @el
+                    </td>
+                }
+                </tr>
+            }
+
+    </tbody>
+</table>

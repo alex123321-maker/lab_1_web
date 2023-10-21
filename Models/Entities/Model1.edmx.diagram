@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6d2f733851b54deebab124a1ff99119b" Name="Diagram1">
+        <EntityTypeShape EntityType="I11_MandrikovWEBModel.Группы" Width="2.875" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="I11_MandrikovWEBModel.Студенты" Width="2.75" PointX="7.625" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="I11_MandrikovWEBModel.Студенты_в_группах" Width="2.125" PointX="4.875" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="I11_MandrikovWEBModel.FK_Студенты_в_группах_Группы" ManuallyRouted="false" />
+        <AssociationConnector Association="I11_MandrikovWEBModel.FK_Студенты_в_группах_Студенты" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="I11_MandrikovWEBModel.Пользователи" Width="1.5" PointX="5.125" PointY="4" />
+        <EntityTypeShape EntityType="I11_MandrikovWEBModel.Роли" Width="1.5" PointX="1.625" PointY="4" />
+        <AssociationConnector Association="I11_MandrikovWEBModel.FK_Пользователи_Роли" />
+        <AssociationConnector Association="I11_MandrikovWEBModel.FK_Студенты_Пользователи" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
